@@ -1,4 +1,87 @@
+#first{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15%;
+    width: 17%;
+
+}
+body{
+  /* height: 100%; */
+  text-align: center;
+  background-color:#00CED1
+
+}
+
+
 #map {
+
 height: 600px;
-width: 100%;
+align-items: center;
+width: 90%;
+margin-left:5%;
+margin-top: 5%;
+
+}
+
+#name{
+  font-size: 16px;
+  font-weight: 700;
+text-align: center;
+}
+
+
+.card {
+  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+
+}
+
+
+
+
+#map .gm-style-iw {
+
+  margin:0 auto;
+
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border-color: grey;
+
+
+}
+h1{
+  color:white;
+}
+#map .iw-content p {
+
+  color: blue;
+  color: #a5a5a5;
+}
+#map .iw-Title {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+
+}
+footer {
+  display: inline;
+
+  height:100%;
+  text-align: center;
+}
+footer a{
+  color: black;
+  display: inline;
+  color:white;
+}
+footer .fa {
+  width: 5%;
+  height: 5%;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* align: center; */
 }

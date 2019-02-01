@@ -52,13 +52,6 @@ async function drawMarkers(err,data) {
 
 //add Marker
 function addMarker(props){
-
-
-  if(props.content){
-    var infoWindow = new google.maps.InfoWindow({
-      maxWidth:600,
-      content:"<h3>"+props.name+"</h3> <p><b>Project : </b>"+props.project+"<br><b>Message</b> : "+props.message+"<br><b>Terms on </b>: "+props.termson+"<br><img src='"+props.iconImage+"'alt='image in infowindow'>"
-    });
   if(props.project==""){
     var marker = new google.maps.Marker ({
     position:props.coords,
@@ -66,23 +59,33 @@ function addMarker(props){
     animation: google.maps.Animation.DROP,
     icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
     });
+    if(props.content){
+      var infoWindow = new google.maps.InfoWindow({
+        maxWidth:600,
+        content:"<div class = 'card'><h3 id = 'name'>"+props.name+"</h3><b>Message</b> : "+props.message+"<br><b>Terms on </b>: "+props.termson+"<br><img src='"+props.iconImage+"'alt='image in infowindow'></div>"
+      });
   }
-  else{
+}
+else{
     var marker = new google.maps.Marker ({
       position:props.coords,
       map:map,
-      animation: google.maps.Animation.DROP
+      animation: google.maps.Animation.DROP,
+        // icon:props.iconImage
+      });
+        var infoWindow = new google.maps.InfoWindow({
 
-  // icon:props.iconImage
-  });
+          content:"<div class ='card'><h3 id ='name'>"+props.name+"</h3> <p><b>Project : </b>"+props.project+"<br><b>Message</b> : "+props.message+"<br><b>Terms on </b>: "+props.termson+"<br><img src='"+props.iconImage+"'alt='image in infowindow'></div>"
+        });
+      }
+
+      marker.addListener('click',function(){
+      infoWindow.open(map,marker);
+    });
 }
 
-  marker.addListener('click',function(){
-    infoWindow.open(map,marker);
-  //marker.setIcon(image);
-  });
-  }
-}
+
+
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
