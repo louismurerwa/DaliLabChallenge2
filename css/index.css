@@ -1,4 +1,5 @@
 #first{
+  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
   display: block;
     margin-left: auto;
     margin-right: auto;
@@ -7,6 +8,7 @@
 
 }
 body{
+  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
   text-align: center;
   background: #36D1DC;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
