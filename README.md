@@ -13,3 +13,6 @@ I parsed JSON data containing information about DALI Lab members from https://ra
 Reflection:
 
 The project was a fun expremintial way to learn.I faced a ton of challenges in learning the language ins and outs of Javascript.I had problems displaying the info pop-up of the markers.The reason of the problem was that the images are of difrent sizes so if I displayed all the images at once they covered the whole map.I also added another cool feature in which members with a project are displayed with normal google maps markers but those without a project are displayed with beachflag markers.
+
+
+<img width="1436" alt="dalichallenge2" src="https://user-images.githubusercontent.com/35416595/52174265-57355480-275f-11e9-8d89-ef9394f0421e.png">
