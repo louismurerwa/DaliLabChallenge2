@@ -1,6 +1,8 @@
 # DaliLabChallenge2
 DALI Lab Developer 2 Challenge
 
+To view the website -> <a href="https://goofy-bose-a6ef71.netlify.com">DaliLabChallenge</a>
+
 A simple web app that visualizes data provided in a JSON on a world map.
 
 
