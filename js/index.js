@@ -7,9 +7,7 @@ function initMap(){
     center:{lat:43.7022,lng:-72.2896}
   }
   //Create map
-  map = new
-  //Grab map div in html
-  google.maps.Map(document.getElementById('map'), options);
+  map = new google.maps.Map(document.getElementById('map'), options);
   //Adding a listener to a to a div with id map and marker
   google.maps.event.addListener(map,'click',function(event){
       addMarker({coords:event.latlng});
@@ -38,15 +36,22 @@ async function drawMarkers(err,data) {
   if (err !== null) {
     alert('Something went wrong: ' + err);
   } else {
+
+  var heatmapData = [];
   for(var i =0;i<data.length;i++){
+    var latLng = new google.maps.LatLng(data[i].lat_long[0], data[i].lat_long[1]);
+    heatmapData.push(latLng);
+
+
     content='Project '+data[i].project+
     'Termson  '+data[i].terms_on+
     'Message  '+data[i].message
     await sleep(600);
+
     addMarker({coords:{lat:data[i].lat_long[0],lng:data[i].lat_long[1]},iconImage:'http://mappy.dali.dartmouth.edu/'+data[i].iconUrl,name:data[i].name,content:content,project:data[i].project,message:data[i].message,termson:data[i].terms_on});
 
   }
-    // print(data);
+    eqfeed_callback(heatmapData);
   }
 }
 
@@ -83,6 +88,14 @@ else{
       infoWindow.open(map,marker);
     });
 }
+
+function eqfeed_callback(heatmapData){
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+          data: heatmapData,
+          dissipating: false,
+          map: map
+        });
+      }
 
 
 
